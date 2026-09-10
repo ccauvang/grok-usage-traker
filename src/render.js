@@ -6,10 +6,10 @@
 
     function getColorForPercentage(usedPercent) {
         if (usedPercent < 50) return '#a1a1aa';
-        if (usedPercent < 75) return '#ca8a04';
-        if (usedPercent < 88) return '#eab308';
-        if (usedPercent < 94) return '#f97316';
-        return '#ef4444';
+        if (usedPercent < 75) return '#FCE5B5';
+        if (usedPercent < 88) return '#FFC824';
+        if (usedPercent < 94) return '#FF7E22';
+        return '#FF3838';
     }
 
     function isNativeCreditsButton(btn) {
@@ -72,7 +72,7 @@
 
     function renderChip(info) {
         const nativeBtn = findNativeCreditsButton();
-        const usedPercent = info.total ? (info.used / info.total) * 100 : 0;
+        const usedPercent = info.total ? ((info.total - info.used) / info.total) * 100 : 0;
         const color = getColorForPercentage(usedPercent);
 
         if (nativeBtn) {

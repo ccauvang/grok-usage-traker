@@ -119,10 +119,10 @@
 
         const modelName = getCurrentModelApiName();
         const data = await fetchRateLimits(DEFAULT_REQUEST_KIND, modelName);
-        const used = data.totalQueries - data.remainingQueries;
+        const used = data.remainingQueries;
         return {
             tier: 'free',
-            used,
+            used: used,
             total: data.totalQueries,
             displayMode: 'fraction',
             modelLabel: getCurrentModelLabel() || modelName,
