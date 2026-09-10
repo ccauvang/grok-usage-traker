@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["https://grok.com/*"],
-      "js": ["content.js"],
+      "js": ["src/data.js", "src/render.js", "src/content.js"],
       "run_at": "document_end"
     }
   ],
