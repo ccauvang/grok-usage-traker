@@ -41,7 +41,16 @@
     function buildChip() {
         const chip = document.createElement('div');
         chip.id = CHIP_ID;
-        chip.className = 'inline-flex items-center gap-1 h-10 px-3 rounded-full text-sm font-semibold';
+        chip.style.cssText = `display:inline-flex;
+        align-items:center;
+        gap:4px;
+        height:32px;
+        padding:0 8px;
+        flex:none;
+        border-radius:9999px;
+        font-size:14px;
+        font-weight:600;
+        line-height:1;`;
         chip.innerHTML = `
             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m12 14 4-4"></path>
