@@ -57,10 +57,11 @@
         if (chip) return chip;
 
         const wrapper = findModeSelectWrapper();
-        if (!wrapper || !wrapper.parentElement) return null;
+        if (!wrapper) return null;
 
         chip = buildChip();
-        wrapper.parentElement.insertBefore(chip, wrapper);
+        // inside wrapper, not before it - parent layout changed, sibling now lands on its own row
+        wrapper.prepend(chip);
         return chip;
     }
 
